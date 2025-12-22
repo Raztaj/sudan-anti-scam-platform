@@ -115,3 +115,32 @@ body {
     background-color: #fff;
     border-color: #fff;
 }
+
+/* RTL Styles */
+.rtl {
+    direction: rtl;
+}
+
+.rtl .text-left {
+    text-align: right !important;
+}
+
+.rtl .text-right {
+    text-align: left !important;
+}
+
+.rtl nav .container > div {
+    flex-direction: row-reverse;
+}
+
+/* RTL override for nav-link underline */
+.rtl .nav-link::after {
+    left: auto;
+    right: 0;
+}
+
+/* RTL override for Tailwind's space-x utility */
+.rtl .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    margin-left: 0 !important;
+    margin-right: 1rem !important;
+}

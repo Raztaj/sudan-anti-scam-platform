@@ -34,7 +34,7 @@
             </p>
 
             <div class="bg-white p-8 rounded-lg shadow-md">
-                <form action="smart-analysis-results.html" method="GET">
+                <form id="smart-analysis-form" action="smart-analysis-results.html" method="GET">
                     <textarea
                         name="message"
                         class="w-full p-4 border rounded-md h-40 focus:ring-2 focus:ring-SASP-primary focus:outline-none"
@@ -47,6 +47,7 @@
                         Analyze Message
                     </button>
                 </form>
+                <div id="error-message" class="text-red-500 mt-4 text-center" style="display: none;"></div>
             </div>
         </div>
     </main>

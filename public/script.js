@@ -52,10 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
             analysis_results_warning: 'Warning: High Scam Probability (96%)',
             analysis_results_ai_analysis_title: 'AI Analysis:',
             analysis_results_ai_analysis_desc: 'Our engine analyzed the text and detected the following patterns common in scam messages:',
-            analysis_results_pattern_1: '<strong>Urgency Pattern:</strong> The message uses phrases like "immediately" or "your account will be closed" to rush you into a decision.',
-            analysis_results_pattern_2: '<strong>Suspicious Link:</strong> The included link does not belong to the official domain of the mentioned entity.',
-            analysis_results_pattern_3: '<strong>Request for Sensitive Info:</strong> The message implies a need to enter personal or banking details.',
-            analysis_results_note: 'Note: This is a simulated result to demonstrate the AI capabilities in the final version of the app.'
+            analysis_results_pattern_1: '🔴 <strong>Urgency Pattern:</strong> The message uses phrases like "immediately" or "your account will be closed" to rush you into a decision.',
+            analysis_results_pattern_2: '🔴 <strong>Suspicious Link:</strong> The included link does not belong to the official domain of the mentioned entity.',
+            analysis_results_pattern_3: '🔴 <strong>Request for Sensitive Info:</strong> The message implies a need to enter personal or banking details.',
+            analysis_results_note: 'Note: This is a simulated result to demonstrate the AI capabilities in the final version of the app.',
+            empty_message_alert: 'Please paste a message to analyze.'
         },
         ar: {
             nav_home: 'الرئيسية',
@@ -109,10 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
             analysis_results_warning: 'تحذير: احتمال احتيال مرتفع (96%)',
             analysis_results_ai_analysis_title: 'تحليل الذكاء الاصطناعي:',
             analysis_results_ai_analysis_desc: 'قام محركنا بتحليل النص واكتشف الأنماط التالية الشائعة في رسائل الاحتيال:',
-            analysis_results_pattern_1: '<strong>نمط الإلحاح:</strong> تستخدم الرسالة عبارات مثل "فورًا" أو "سيتم إغلاق حسابك" لدفعك لاتخاذ قرار متسرع.',
-            analysis_results_pattern_2: '<strong>رابط مشبوه:</strong> الرابط المضمن لا ينتمي إلى النطاق الرسمي للجهة المذكورة.',
-            analysis_results_pattern_3: '<strong>طلب معلومات حساسة:</strong> تشير الرسالة إلى الحاجة لإدخال تفاصيل شخصية أو مصرفية.',
-            analysis_results_note: 'ملاحظة: هذه نتيجة محاكاة لتوضيح قدرات الذكاء الاصطناعي في الإصدار النهائي من التطبيق.'
+            analysis_results_pattern_1: '🔴 <strong>نمط استعجال:</strong> تستخدم الرسالة عبارات مثل "فورًا" أو "سيتم إغلاق حسابك" لدفعك لاتخاذ قرار متسرع.',
+            analysis_results_pattern_2: '🔴 <strong>رابط مشبوه:</strong> الرابط المضمن لا ينتمي إلى النطاق الرسمي للجهة المذكورة.',
+            analysis_results_pattern_3: '🔴 <strong>طلب معلومات حساسة:</strong> تشير الرسالة إلى الحاجة لإدخال تفاصيل شخصية أو مصرفية.',
+            analysis_results_note: 'ملاحظة: هذه نتيجة محاكاة لتوضيح قدرات الذكاء الاصطناعي في الإصدار النهائي من التطبيق.',
+            empty_message_alert: 'يرجى لصق رسالة لتحليلها.'
         }
     };
 
@@ -210,6 +212,23 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Thank you for your report!');
             form.reset();
         });
+    }
+
+    if (document.querySelector('#smart-analysis-form')) {
+        const form = document.querySelector('#smart-analysis-form');
+        const errorMessageContainer = document.querySelector('#error-message');
+
+        form.addEventListener('submit', (e) => {
+            const message = form.querySelector('textarea').value.trim();
+            if (message === '') {
+                e.preventDefault();
+                errorMessageContainer.innerHTML = translations[currentLanguage]['empty_message_alert'];
+                errorMessageContainer.style.display = 'block';
+            } else {
+                errorMessageContainer.style.display = 'none';
+            }
+        });
+        document.body.setAttribute('data-test-id', 'validation-ready');
     }
 
     if (document.querySelector('#search-database-form')) {
