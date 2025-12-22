@@ -195,6 +195,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navLinksContainer = document.getElementById('nav-links');
+
+    if (hamburgerMenu && navLinksContainer) {
+        hamburgerMenu.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('hidden');
+        });
+    }
+
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-link');
 
@@ -216,16 +225,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (document.querySelector('#smart-analysis-form')) {
         const form = document.querySelector('#smart-analysis-form');
+        const analyzeButton = document.getElementById('analyze-button');
         const errorMessageContainer = document.querySelector('#error-message');
 
-        form.addEventListener('submit', (e) => {
+        analyzeButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Explicitly prevent any default behavior
             const message = form.querySelector('textarea').value.trim();
             if (message === '') {
-                e.preventDefault();
                 errorMessageContainer.innerHTML = translations[currentLanguage]['empty_message_alert'];
                 errorMessageContainer.style.display = 'block';
             } else {
                 errorMessageContainer.style.display = 'none';
+                form.submit();
             }
         });
         document.body.setAttribute('data-test-id', 'validation-ready');
