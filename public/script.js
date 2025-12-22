@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_report: 'Report Scam',
             nav_search: 'Search Database',
             nav_verified: 'Verified Profiles',
-            nav_check: 'Check Message',
+            nav_smart_analysis: 'Smart Analysis',
             hero_title: 'Sudan Anti-Scam Platform',
             hero_subtitle: 'Your first line of defense against scams in Sudan',
             hero_description: 'Protect yourself and others from scams in Sudan by reporting suspicious activities and verifying information through our trusted platform.',
@@ -43,14 +43,26 @@ document.addEventListener('DOMContentLoaded', () => {
             paste_message_desc: 'Paste a suspicious message to check for scam patterns',
             paste_message_placeholder: 'Paste the suspicious message here...',
             analyze_message: 'Analyze Message',
-            disclaimer: 'Disclaimer: This tool provides a basic analysis and is not a guarantee of safety. Always be cautious.'
+            disclaimer: 'Disclaimer: This tool provides a basic analysis and is not a guarantee of safety. Always be cautious.',
+            smart_analysis_title: 'Smart Analysis Engine (Demo Version)',
+            smart_analysis_desc: 'Does this message feel strange? Paste it here and let our AI engine reveal hidden scam patterns.',
+            smart_analysis_placeholder: 'Paste the suspicious message here...',
+            smart_analysis_button: 'Analyze Message',
+            analysis_results_title: 'Analysis Results',
+            analysis_results_warning: 'Warning: High Scam Probability (96%)',
+            analysis_results_ai_analysis_title: 'AI Analysis:',
+            analysis_results_ai_analysis_desc: 'Our engine analyzed the text and detected the following patterns common in scam messages:',
+            analysis_results_pattern_1: '<strong>Urgency Pattern:</strong> The message uses phrases like "immediately" or "your account will be closed" to rush you into a decision.',
+            analysis_results_pattern_2: '<strong>Suspicious Link:</strong> The included link does not belong to the official domain of the mentioned entity.',
+            analysis_results_pattern_3: '<strong>Request for Sensitive Info:</strong> The message implies a need to enter personal or banking details.',
+            analysis_results_note: 'Note: This is a simulated result to demonstrate the AI capabilities in the final version of the app.'
         },
         ar: {
             nav_home: 'الرئيسية',
             nav_report: 'الإبلاغ عن احتيال',
             nav_search: 'البحث في قاعدة البيانات',
             nav_verified: 'الملفات الموثقة',
-            nav_check: 'فحص الرسائل',
+            nav_smart_analysis: 'التحليل الذكي',
             hero_title: 'منصة السودان لمكافحة الاحتيال',
             hero_subtitle: 'خط دفاعك الأول ضد الاحتيال في السودان',
             hero_description: 'احم نفسك والآخرين من عمليات الاحتيال في السودان من خلال الإبلاغ عن الأنشطة المشبوهة والتحقق من المعلومات من خلال منصتنا الموثوقة.',
@@ -88,7 +100,19 @@ document.addEventListener('DOMContentLoaded', () => {
             paste_message_desc: 'الصق رسالة مشبوهة للتحقق من أنماط الاحتيال',
             paste_message_placeholder: 'الصق الرسالة المشبوهة هنا...',
             analyze_message: 'تحليل الرسالة',
-            disclaimer: 'إخلاء مسؤولية: هذه الأداة توفر تحليلًا أساسيًا وليست ضمانًا للسلامة. كن حذرًا دائمًا.'
+            disclaimer: 'إخلاء مسؤولية: هذه الأداة توفر تحليلًا أساسيًا وليست ضمانًا للسلامة. كن حذرًا دائمًا.',
+            smart_analysis_title: 'محرك التحليل الذكي (نسخة تجريبية)',
+            smart_analysis_desc: 'هل تشعر بأن هذه الرسالة غريبة؟ الصقها هنا ودع محرك الذكاء الاصطناعي لدينا يكشف عن أنماط الاحتيال الخفية.',
+            smart_analysis_placeholder: 'الصق الرسالة المشبوهة هنا...',
+            smart_analysis_button: 'تحليل الرسالة',
+            analysis_results_title: 'نتائج التحليل',
+            analysis_results_warning: 'تحذير: احتمال احتيال مرتفع (96%)',
+            analysis_results_ai_analysis_title: 'تحليل الذكاء الاصطناعي:',
+            analysis_results_ai_analysis_desc: 'قام محركنا بتحليل النص واكتشف الأنماط التالية الشائعة في رسائل الاحتيال:',
+            analysis_results_pattern_1: '<strong>نمط الإلحاح:</strong> تستخدم الرسالة عبارات مثل "فورًا" أو "سيتم إغلاق حسابك" لدفعك لاتخاذ قرار متسرع.',
+            analysis_results_pattern_2: '<strong>رابط مشبوه:</strong> الرابط المضمن لا ينتمي إلى النطاق الرسمي للجهة المذكورة.',
+            analysis_results_pattern_3: '<strong>طلب معلومات حساسة:</strong> تشير الرسالة إلى الحاجة لإدخال تفاصيل شخصية أو مصرفية.',
+            analysis_results_note: 'ملاحظة: هذه نتيجة محاكاة لتوضيح قدرات الذكاء الاصطناعي في الإصدار النهائي من التطبيق.'
         }
     };
 
@@ -140,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-key]').forEach(element => {
             const key = element.getAttribute('data-key');
             if (translations[currentLanguage] && translations[currentLanguage][key]) {
-                element.textContent = translations[currentLanguage][key];
+                element.innerHTML = translations[currentLanguage][key];
             }
         });
 
@@ -208,31 +232,6 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 html = `<div class="border rounded-lg shadow-md bg-white p-6 text-center">
                     <p class="text-muted-foreground" data-key="no_results">No results found for the given query.</p>
-                </div>`;
-            }
-            resultsContainer.innerHTML = html;
-        });
-    }
-
-    if (document.querySelector('#check-message-form')) {
-        const form = document.querySelector('#check-message-form');
-        const resultsContainer = document.querySelector('#check-message-results');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const message = form.querySelector('textarea').value.toLowerCase();
-            const phrases = currentLanguage === 'en' ? suspiciousPhrases : suspiciousPhrasesAr;
-            const matches = phrases.filter(phrase => message.includes(phrase.toLowerCase()));
-
-            let html = '';
-            if (matches.length > 0) {
-                html = `<div class="border rounded-lg shadow-md bg-white p-6">
-                    <h3 class="text-xl font-bold text-red-500">Suspicious Message</h3>
-                    <p>This message contains ${matches.length} suspicious patterns:</p>
-                    <ul>${matches.map(match => `<li>${match}</li>`).join('')}</ul>
-                </div>`;
-            } else {
-                html = `<div class="border rounded-lg shadow-md bg-white p-6">
-                    <h3 class="text-xl font-bold text-green-500">No Suspicious Patterns Detected</h3>
                 </div>`;
             }
             resultsContainer.innerHTML = html;
