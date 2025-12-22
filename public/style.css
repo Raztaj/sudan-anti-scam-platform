@@ -1,0 +1,42 @@
+:root {
+    --background: hsl(195 30% 97%);
+    --foreground: hsl(195 40% 16%);
+    --card: hsl(0 0% 100%);
+    --card-foreground: hsl(195 40% 16%);
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(195 40% 16%);
+    --primary: hsl(195 63% 29%);
+    --primary-foreground: hsl(210 40% 98%);
+    --secondary: hsl(176 76% 33%);
+    --secondary-foreground: hsl(210 40% 98%);
+    --muted: hsl(195 15% 90%);
+    --muted-foreground: hsl(195 20% 35%);
+    --accent: hsl(176 41% 56%);
+    --accent-foreground: hsl(195 50% 10%);
+    --destructive: hsl(0 84.2% 60.2%);
+    --destructive-foreground: hsl(210 40% 98%);
+    --border: hsl(195 15% 85%);
+    --input: hsl(195 15% 85%);
+    --ring: hsl(195 63% 29%);
+    --radius: 0.5rem;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+.feature-card {
+    background-color: var(--card);
+    color: var(--card-foreground);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease-in-out;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
