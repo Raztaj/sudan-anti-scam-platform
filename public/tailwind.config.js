@@ -1,0 +1,30 @@
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        'sasp-primary': 'hsl(195 63% 29%)',
+        'sasp-secondary': 'hsl(176 76% 33%)',
+        'sasp-light': 'hsl(195 30% 90%)',
+        'background': 'hsl(195 30% 97%)',
+        'foreground': 'hsl(195 40% 16%)',
+        'card': 'hsl(0 0% 100%)',
+        'card-foreground': 'hsl(195 40% 16%)',
+        'popover': 'hsl(0 0% 100%)',
+        'popover-foreground': 'hsl(195 40% 16%)',
+        'primary': 'hsl(195 63% 29%)',
+        'primary-foreground': 'hsl(210 40% 98%)',
+        'secondary': 'hsl(176 76% 33%)',
+        'secondary-foreground': 'hsl(210 40% 98%)',
+        'muted': 'hsl(195 15% 90%)',
+        'muted-foreground': 'hsl(195 20% 35%)',
+        'accent': 'hsl(176 41% 56%)',
+        'accent-foreground': 'hsl(195 50% 10%)',
+        'destructive': 'hsl(0 84.2% 60.2%)',
+        'destructive-foreground': 'hsl(210 40% 98%)',
+        'border': 'hsl(195 15% 85%)',
+        'input': 'hsl(195 15% 85%)',
+        'ring': 'hsl(195 63% 29%)',
+      },
+    },
+  },
+}

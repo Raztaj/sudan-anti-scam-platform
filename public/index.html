@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASP - Sudan Anti Scam Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-background">
+    <div id="root">
+        <div class="min-h-screen bg-background">
+            <header class="bg-white shadow-md">
+                <div class="container mx-auto px-4">
+                    <div class="flex justify-between items-center py-4">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-sasp-primary"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            <span class="ms-2 text-2xl font-bold text-sasp-primary">SASP</span>
+                        </div>
+                        <div class="hidden md:flex items-center space-x-4">
+                            <a href="#" class="text-muted-foreground hover:text-sasp-primary">Home</a>
+                            <a href="#" class="text-muted-foreground hover:text-sasp-primary">Report Scam</a>
+                            <a href="#" class="text-muted-foreground hover:text-sasp-primary">Search Database</a>
+                            <a href="#" class="text-muted-foreground hover:text-sasp-primary">Verified Profiles</a>
+                            <a href="#" class="text-muted-foreground hover:text-sasp-primary">Check Message</a>
+                        </div>
+                        <div class="flex items-center">
+                            <button id="language-switcher" class="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:bg-muted">
+                                <span id="language-text"></span>
+                            </button>
+                            <button class="md:hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="bg-gradient-to-b from-sasp-primary to-sasp-secondary text-white py-16">
+                <div class="container mx-auto px-4 text-center">
+                    <div class="flex justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-20 w-20 mb-6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4" data-key="appName">SASP</h1>
+                    <p class="text-xl md:text-2xl mb-8" data-key="tagline">Your Shield Against Scams in Sudan</p>
+                    <p class="max-w-2xl mx-auto mb-8" data-key="protectionInfo">Protect yourself and others from scams in Sudan by reporting suspicious activities and verifying information through our trusted platform.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#">
+                            <button class="bg-white text-sasp-primary hover:bg-sasp-light px-6 py-3 rounded-md font-semibold" data-key="reportScam">Report Scam</button>
+                        </a>
+                        <a href="#">
+                            <button class="text-white border-white hover:bg-sasp-secondary border px-6 py-3 rounded-md font-semibold" data-key="searchDatabase">Search Database</button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-16">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold mb-12 text-center" data-key="protectYourself">Protect Yourself from Scams</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="feature-card hover:scale-105 p-6 border rounded-lg text-center">
+                            <div class="flex flex-col items-center">
+                                <div class="p-4 bg-sasp-light rounded-full mb-4 text-sasp-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2" data-key="reportScam">Report Scam</h3>
+                                <p class="text-muted-foreground mb-4" data-key="reportScamDescription">Report suspicious phone numbers, emails, or social media accounts</p>
+                            </div>
+                            <a href="#" class="w-full">
+                                <button class="w-full bg-sasp-primary hover:bg-sasp-secondary text-white px-4 py-2 rounded-md" data-key="reportScam">Report Scam</button>
+                            </a>
+                        </div>
+                        <div class="feature-card hover:scale-105 p-6 border rounded-lg text-center">
+                            <div class="flex flex-col items-center">
+                                <div class="p-4 bg-sasp-light rounded-full mb-4 text-sasp-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2" data-key="searchDatabase">Search Database</h3>
+                                <p class="text-muted-foreground mb-4" data-key="searchDatabaseDescription">Check if a number or account has been reported before</p>
+                            </div>
+                            <a href="#" class="w-full">
+                                <button class="w-full bg-sasp-primary hover:bg-sasp-secondary text-white px-4 py-2 rounded-md" data-key="searchDatabase">Search Database</button>
+                            </a>
+                        </div>
+                        <div class="feature-card hover:scale-105 p-6 border rounded-lg text-center">
+                            <div class="flex flex-col items-center">
+                                <div class="p-4 bg-sasp-light rounded-full mb-4 text-sasp-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2" data-key="verifiedProfiles">Verified Profiles</h3>
+                                <p class="text-muted-foreground mb-4" data-key="verifiedProfilesDescription">View official profiles of banks and companies</p>
+                            </div>
+                            <a href="#" class="w-full">
+                                <button class="w-full bg-sasp-primary hover:bg-sasp-secondary text-white px-4 py-2 rounded-md" data-key="verifiedProfiles">Verified Profiles</button>
+                            </a>
+                        </div>
+                        <div class="feature-card hover:scale-105 p-6 border rounded-lg text-center">
+                            <div class="flex flex-col items-center">
+                                <div class="p-4 bg-sasp-light rounded-full mb-4 text-sasp-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2" data-key="checkMessage">Check Message</h3>
+                                <p class="text-muted-foreground mb-4" data-key="checkMessageDescription">Analyze a suspicious message for scam patterns</p>
+                            </div>
+                            <a href="#" class="w-full">
+                                <button class="w-full bg-sasp-primary hover:bg-sasp-secondary text-white px-4 py-2 rounded-md" data-key="checkMessage">Check Message</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-16 bg-muted/50">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold mb-6 text-center" data-key="latestAlerts">Latest Alerts</h2>
+                    <div class="max-w-3xl mx-auto">
+                        </div>
+                </div>
+            </section>
+
+            <footer class="bg-sasp-primary text-white py-8">
+                <div class="container mx-auto px-4 text-center">
+                    <p data-key="footerText">© 2025 SASP - Sudan Anti-Scam Platform. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
