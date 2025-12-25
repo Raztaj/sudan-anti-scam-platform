@@ -1,1 +1,26 @@
-/* Custom styles will go here */
+/* Custom styles for Salamah Platform */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: #2563eb;
+    border: 1px solid #2563eb;
+}
+
+.hero-section {
+    background-color: #2563eb;
+    color: white;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.rtl {
+    direction: rtl;
+}
