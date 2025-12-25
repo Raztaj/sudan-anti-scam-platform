@@ -40,44 +40,65 @@
             <div id="auth-button-container"></div>
         </div>
     </nav>
+
     <div class="container mx-auto p-4">
-        <h1 class="text-4xl font-bold text-center my-8" data-i18n="submitReportTitle"></h1>
-        <form id="report-form" class="space-y-4 max-w-xl mx-auto">
-            <p id="form-message" class="text-center"></p>
-            <div>
-                <label class="label"><span class="label-text">Report Type</span></label>
-                <select id="report-type" class="select select-bordered w-full">
-                    <option>Phone Number</option>
-                    <option>Email</option>
-                    <option>Social Media</option>
-                </select>
-            </div>
-            <div>
-                <label class="label"><span class="label-text">Identifier (Phone, Email, URL)</span></label>
-                <input type="text" id="identifier" placeholder="Enter the identifier" class="input input-bordered w-full" required />
-            </div>
-            <div>
-                <label class="label"><span class="label-text">Description</span></label>
-                <textarea id="description" class="textarea textarea-bordered w-full" placeholder="Describe the scam" required></textarea>
-            </div>
-            <div>
-                <label class="label"><span class="label-text">Category</span></label>
-                <select id="category" class="select select-bordered w-full">
-                    <option>Financial</option>
-                    <option>Impersonation</option>
-                    <option>Unrealistic Offers</option>
-                    <option>Action Triggers</option>
-                </select>
-            </div>
-            <button type="submit" id="submit-btn" class="btn btn-primary w-full">Submit Report</button>
-        </form>
+        <div class="text-center my-8">
+            <h1 class="text-4xl font-bold" data-i18n="submitReportTitle"></h1>
+            <p class="mt-2" data-i18n="submitReportSubtitle"></p>
+        </div>
+
+        <div class="card max-w-2xl mx-auto">
+            <form id="report-form" class="space-y-6">
+                <p id="form-message" class="text-center text-lg"></p>
+
+                <!-- Step 1: Identifier -->
+                <div id="form-step-1" class="form-step">
+                    <div class="form-control">
+                        <label class="label"><span class="label-text" data-i18n="formReportType"></span></label>
+                        <select id="report-type" class="select select-bordered w-full">
+                            <option data-i18n="typePhoneNumber"></option>
+                            <option data-i18n="typeEmail"></option>
+                            <option data-i18n="typeSocialMedia"></option>
+                        </select>
+                    </div>
+                    <div class="form-control">
+                        <label class="label"><span class="label-text" data-i18n="formIdentifier"></span></label>
+                        <input type="text" id="identifier" class="input input-bordered w-full" required />
+                    </div>
+                </div>
+
+                <!-- Step 2: Details -->
+                <div id="form-step-2" class="form-step" style="display: none;">
+                    <div class="form-control">
+                        <label class="label"><span class="label-text" data-i18n="formDescription"></span></label>
+                        <textarea id="description" class="textarea textarea-bordered w-full h-28" required></textarea>
+                    </div>
+                    <div class="form-control">
+                        <label class="label"><span class="label-text" data-i18n="formCategory"></span></label>
+                        <select id="category" class="select select-bordered w-full">
+                            <option data-i18n="categoryFinancial"></option>
+                            <option data-i18n="categoryImpersonation"></option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="flex justify-between mt-8">
+                    <button type="button" id="prev-btn" class="btn" style="display: none;" data-i18n="prevButton">Previous</button>
+                    <button type="button" id="next-btn" class="btn btn-primary" data-i18n="nextButton">Next</button>
+                    <button type="submit" id="submit-btn" class="btn btn-primary" style="display: none;" data-i18n="formSubmitBtn">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+
+    <footer class="footer footer-center p-4 bg-base-300 text-base-content mt-12">
         <div>
             <p>Copyright © 2024 - All right reserved by SASP</p>
             <a href="mailto:feedback@sasp.org" class="link link-hover">Provide Feedback</a>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="config.js"></script>
     <script src="script.js"></script>

@@ -1,26 +1,89 @@
-/* Custom styles for Salamah Platform */
+:root {
+    --sasp-primary-blue: #0A2A4D; /* Dark Blue for trust, headers, primary buttons */
+    --sasp-success-green: #00BFA6; /* Green for success messages, verified icons */
+    --sasp-warning-orange: #FF9F43; /* Orange for medium-risk warnings */
+    --sasp-danger-red: #F5365C;   /* Red for high-risk alerts */
+    --sasp-light-bg: #f0f2f5;      /* Light grey background */
+    --sasp-white: #FFFFFF;
+    --sasp-dark-text: #333333;
+    --sasp-light-text: #f0f2f5;
+}
+
+/* Basic styling for the body */
 body {
     font-family: 'Inter', sans-serif;
+    background-color: var(--sasp-light-bg);
+    color: var(--sasp-dark-text);
 }
 
+/* Redefine daisyUI primary color for consistency */
 .btn-primary {
-    background-color: #2563eb;
-    color: white;
+    background-color: var(--sasp-primary-blue);
+    color: var(--sasp-white);
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #0E3E70; /* A slightly lighter shade of the primary blue for hover */
 }
 
-.btn-secondary {
-    background-color: #ffffff;
-    color: #2563eb;
-    border: 1px solid #2563eb;
+/* Custom styles for cards */
+.card {
+    background-color: var(--sasp-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
 }
 
-.hero-section {
-    background-color: #2563eb;
-    color: white;
-    padding: 4rem 1rem;
+/* New classes for dashboard stat cards */
+.stat-card {
+    background-color: var(--sasp-white);
+    border-left: 5px solid var(--sasp-primary-blue);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     text-align: center;
 }
+.stat-card h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--sasp-primary-blue);
+}
+.stat-card p {
+    font-size: 1rem;
+    color: var(--sasp-dark-text);
+    margin-top: 0.5rem;
+}
 
-.rtl {
-    direction: rtl;
+/* New classes for Risk Score result cards */
+.result-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    color: var(--sasp-white);
+    margin-top: 1rem;
+}
+.result-card-danger {
+    background-color: var(--sasp-danger-red);
+}
+.result-card-neutral {
+    background-color: var(--sasp-primary-blue);
+}
+.result-card h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Hero section on the main page */
+.hero {
+    background-color: var(--sasp-primary-blue);
+    color: var(--sasp-light-text);
+    text-align: center;
+    padding: 4rem 1rem;
+    border-radius: 0 0 20px 20px;
+}
+
+/* Additional utility classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
 }
