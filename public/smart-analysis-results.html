@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results - SASP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-background text-foreground">
+    <div id="root">
+        <div class="min-h-screen bg-background">
+            <nav class="bg-white shadow-md">
+                <div class="container mx-auto px-4">
+                    <div class="flex justify-between items-center py-4">
+                        <a href="/" class="text-2xl font-bold text-SASP-primary">SASP</a>
+                        <div class="md:hidden">
+                            <button id="hamburger-menu" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="nav-links" class="hidden md:flex items-center space-x-4">
+                            <a href="index.html" class="nav-link" data-key="nav_home">Home</a>
+                            <a href="report.html" class="nav-link" data-key="nav_report">Report Scam</a>
+                            <a href="search.html" class="nav-link" data-key="nav_search">Search Database</a>
+                            <a href="verified.html" class="nav-link" data-key="nav_verified">Verified Profiles</a>
+                            <a href="smart-analysis.html" class="nav-link" data-key="nav_smart_analysis">Smart Analysis</a>
+                        </div>
+                        <div class="flex items-center">
+                            <button id="language-switcher" class="btn btn-primary" style="padding: 0.5rem 1rem;">العربية</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <main class="container mx-auto px-4 py-12">
+                <div class="max-w-3xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h1 class="text-4xl font-bold" data-key="analysis_results_title">Analysis Results</h1>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="text-center mb-6">
+                            <h2 class="text-2xl font-bold text-red-600" data-key="analysis_results_warning">
+                                Warning: High Scam Probability (96%)
+                            </h2>
+                        </div>
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-2" data-key="analysis_results_ai_analysis_title">
+                                AI Analysis:
+                            </h3>
+                            <p class="text-gray-700" data-key="analysis_results_ai_analysis_desc">
+                                Our engine analyzed the text and detected the following patterns common in scam messages:
+                            </p>
+                            <ul class="list-disc list-inside mt-4 space-y-2">
+                                <li data-key="analysis_results_pattern_1">
+                                    <strong>Urgency Pattern:</strong> The message uses phrases like "immediately" or "your account will be closed" to rush you into a decision.
+                                </li>
+                                <li data-key="analysis_results_pattern_2">
+                                    <strong>Suspicious Link:</strong> The included link does not belong to the official domain of the mentioned entity.
+                                </li>
+                                <li data-key="analysis_results_pattern_3">
+                                    <strong>Request for Sensitive Info:</strong> The message implies a need to enter personal or banking details.
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 text-center" data-key="analysis_results_note">
+                                Note: This is a simulated result to demonstrate the AI capabilities in the final version of the app.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
